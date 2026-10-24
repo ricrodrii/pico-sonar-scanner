@@ -51,5 +51,4 @@ With the sensor disconnected, the resistance between its VCC and GND pins measur
 
 - Replace the faulty HC-SR04 sensor.
 - Re-run `tests/ultrasonic-sensor/main.py` with the replacement sensor.
-- Confirm that GP14 receives ECHO edges before returning to distance measurement.
-- Complete the planned short-pulse loopback test if further signal-path validation is needed.
+
