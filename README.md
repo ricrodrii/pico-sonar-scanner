@@ -14,7 +14,7 @@ highlighted in red at their measured angle and distance.
 
 The first ultrasonic sensor test is complete. Systematic debugging isolated the lack of an ECHO signal to a faulty HC-SR04 sensor rather than the Pico, wiring, GPIO configuration, or voltage-divider circuit.
 
-See [`docs/debugging-log.md`](docs/debugging-log.md) for the full test record and diagnosis.
+See [`tests/ultrasonic-sensor/debugging-log.md`](tests/ultrasonic-sensor/debugging-log.md) for the full test record and diagnosis.
 
 ## Sensor test
 
@@ -23,6 +23,7 @@ The sensor test measures distance with an HC-SR04 connected to a Raspberry Pi Pi
 - [`tests/ultrasonic-sensor/main.py`](tests/ultrasonic-sensor/main.py) sends a 10 microsecond trigger pulse and calculates distance from the ECHO pulse.
 - [`tests/ultrasonic-sensor/diagram.json`](tests/ultrasonic-sensor/diagram.json) contains the Wokwi circuit, including the ECHO voltage divider.
 - [`tests/ultrasonic-sensor/wokwi-project.txt`](tests/ultrasonic-sensor/wokwi-project.txt) links to the original Wokwi project.
+- [`tests/ultrasonic-sensor/debugging-log.md`](tests/ultrasonic-sensor/debugging-log.md) records the fault-isolation tests and final sensor diagnosis.
 
 ## Next steps
 
