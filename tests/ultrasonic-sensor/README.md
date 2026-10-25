@@ -27,21 +27,26 @@ These are simulation results, not measurements of physical accuracy.
 
 ## Physical build
 
-Physical assembly and validation are ongoing. Retain the ECHO voltage divider in the physical build; the direct ECHO connection was a simulation-only diagnostic test. Record the final resistor values and wiring before powering the completed circuit.
+The physical circuit uses the ECHO voltage divider. The direct ECHO connection was a simulation-only diagnostic test.
 
-## Files to add
+The original HC-SR04 sensor was found to be faulty after systematic debugging. A replacement sensor was installed, and the existing test program and circuit then worked: the Pico triggered the sensor and received ECHO pulses on GP14.
 
-- `main.py`: the actual MicroPython test code exported from Wokwi.
-- `diagram.json`: the actual Wokwi circuit diagram.
+See [`debugging-log.md`](debugging-log.md) for the full fault-isolation record and diagnosis.
 
-These files have not been uploaded here yet.
+## Files
+
+The following files have been added to this folder:
+
+- [`main.py`](main.py): MicroPython test code exported from Wokwi.
+- [`diagram.json`](diagram.json): Wokwi circuit diagram.
+- [`wokwi-project.txt`](wokwi-project.txt): link to the original Wokwi project.
+- [`debugging-log.md`](debugging-log.md): fault-isolation tests and final sensor diagnosis.
 
 ## Next steps
 
-1. Add the Wokwi project files.
-2. Check physical wiring and resistor values.
-3. Compare readings with ruler measurements at several distances.
-4. Record repeatability and measurement error.
+1. Compare readings with ruler measurements at several distances.
+2. Record repeatability and measurement error.
+3. Integrate the sensor into the rotating scanner system.
 
 ## Acknowledgements
 
