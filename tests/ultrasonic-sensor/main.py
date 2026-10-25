@@ -5,9 +5,6 @@ trig = Pin(15, Pin.OUT)
 echo = Pin(14, Pin.IN)
 
 while True:
-    trig.value(0)
-    time.sleep_us(5)
-
     # Send the required 10 microsecond trigger pulse
     trig.value(1)
     time.sleep_us(10)
@@ -21,6 +18,7 @@ while True:
     else:
         # Convert pulse duration to distance in centimetres
         distance_cm = pulse_time * 0.0343 / 2
-        print("Distance: {:.1f} cm".format(distance_cm))
+        print(f"Distance: {distance_cm:.1f} cm")
 
-    time.sleep_ms(500)
+    # Keep at least 60 ms between measurements
+    time.sleep_ms(60)
