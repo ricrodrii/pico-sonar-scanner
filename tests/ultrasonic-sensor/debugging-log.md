@@ -2,7 +2,7 @@
 
 ## Initial problem
 
-The HC-SR04 ultrasonic sensor did not produce a distance reading. The Raspberry Pi Pico 2 triggered the sensor, but no ECHO pulse was detected on GP14.
+The original HC-SR04 ultrasonic sensor did not produce a distance reading. The Raspberry Pi Pico 2 triggered the sensor, but no ECHO pulse was detected on GP14.
 
 ## Fault-isolation approach
 
@@ -36,9 +36,15 @@ Interrupt-based monitoring and repeated triggering confirmed that no ECHO transi
 
 ## Final diagnosis
 
-With the sensor disconnected, the resistance between its VCC and GND pins measured approximately 0 Ω. This indicated an internal short circuit.
+With the original sensor disconnected, the resistance between its VCC and GND pins measured approximately 0 Ω. This indicated an internal short circuit.
 
-**Conclusion:** the HC-SR04 sensor was the most likely failed component. The Pico, GPIO configuration, TRIG signalling, ground reference, ECHO wiring, and ECHO voltage divider were not identified as faults.
+**Conclusion:** the original HC-SR04 sensor was the failed component. The Pico, GPIO configuration, TRIG signalling, ground reference, ECHO wiring, and ECHO voltage divider were not identified as faults.
+
+## Resolution
+
+A replacement HC-SR04 sensor was installed. The existing test program and circuit then worked: the Pico triggered the sensor and received ECHO pulses on GP14.
+
+This confirmed the original sensor was faulty and validated the Pico, wiring, GPIO configuration, and voltage-divider circuit.
 
 ## Lessons learned
 
@@ -46,9 +52,10 @@ With the sensor disconnected, the resistance between its VCC and GND pins measur
 - Isolate the sensor before measuring directly across its power pins.
 - Use GPIO loopback tests to separate microcontroller and wiring faults from sensor faults.
 - Monitor signal edges with interrupts when a simple pulse-width measurement returns no result.
+- Test with a known-good replacement component to confirm a hardware diagnosis.
 
 ## Next actions
 
-- Replace the faulty HC-SR04 sensor.
-- Re-run `main.py` with the replacement sensor.
-
+- Validate distance readings at known distances.
+- Add the rotating mount and sonar-style display.
+- Integrate the sensor test into the rotating scanner system.

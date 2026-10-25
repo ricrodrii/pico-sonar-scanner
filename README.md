@@ -12,9 +12,14 @@ highlighted in red at their measured angle and distance.
 
 ## Current status
 
-The first ultrasonic sensor test is complete. Systematic debugging isolated the lack of an ECHO signal to a faulty HC-SR04 sensor rather than the Pico, wiring, GPIO configuration, or voltage-divider circuit.
+The replacement HC-SR04 sensor has arrived and the ultrasonic
+sensor test is working. The Pico successfully triggers the
+sensor and receives ECHO pulses on GP14.
 
-See [`tests/ultrasonic-sensor/debugging-log.md`](tests/ultrasonic-sensor/debugging-log.md) for the full test record and diagnosis.
+The original HC-SR04 was diagnosed as faulty after systematic
+debugging. See
+[`tests/ultrasonic-sensor/debugging-log.md`](tests/ultrasonic-sensor/debugging-log.md)
+for the full test record and diagnosis.
 
 ## Sensor test
 
@@ -27,6 +32,6 @@ The sensor test measures distance with an HC-SR04 connected to a Raspberry Pi Pi
 
 ## Next steps
 
-- Replace the faulty HC-SR04 sensor.
-- Re-run the sensor test and confirm ECHO edges on GP14.
 - Add the rotating mount and sonar-style display.
+- Calibrate and validate distance readings at known distances.
+- Integrate the sensor test into the rotating scanner system.
