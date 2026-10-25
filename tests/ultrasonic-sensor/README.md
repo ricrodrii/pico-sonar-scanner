@@ -33,11 +33,17 @@ The original HC-SR04 sensor was found to be faulty after systematic debugging. A
 
 See [`debugging-log.md`](debugging-log.md) for the full fault-isolation record and diagnosis.
 
+## Measurement rate
+
+The test uses a 60 ms delay between measurements. This keeps the total time between HC-SR04 triggers above the recommended measurement cycle and helps prevent a new trigger from interfering with the previous echo.
+
+With successful echoes, the system provides approximately 14–17 readings per second. Readings that time out reduce the rate to around 11 readings per second.
+
 ## Files
 
 The following files have been added to this folder:
 
-- [`main.py`](main.py): MicroPython test code exported from Wokwi.
+- [`main.py`](main.py): MicroPython test code written by the project author, with AI assistance used to add explanatory comments.
 - [`diagram.json`](diagram.json): Wokwi circuit diagram.
 - [`wokwi-project.txt`](wokwi-project.txt): link to the original Wokwi project.
 - [`debugging-log.md`](debugging-log.md): fault-isolation tests and final sensor diagnosis.
@@ -50,4 +56,4 @@ The following files have been added to this folder:
 
 ## Acknowledgements
 
-The initial MicroPython script and troubleshooting guidance were developed with AI assistance.
+The MicroPython script was written by the project author. AI assistance was used to add explanatory comments.

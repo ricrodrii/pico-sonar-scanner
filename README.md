@@ -34,10 +34,10 @@ The following sensor-test files have been added to the repository:
 
 ## AI use
 
-AI was used to help speed up drafting, debugging, and documentation.
-All AI-generated suggestions were reviewed, tested, and adapted where
-necessary. The physical testing, measurements, fault diagnosis, and final
-decisions in this project were carried out by the project author.
+The MicroPython sensor-test script was written by the project author.
+AI assistance was used to add explanatory comments and help with
+documentation. The physical testing, measurements, fault diagnosis, and
+final decisions in this project were carried out by the project author.
 
 ## Next steps
 
