@@ -25,13 +25,22 @@ for the full test record and diagnosis.
 
 The sensor test measures distance with an HC-SR04 connected to a Raspberry Pi Pico 2.
 
+The following sensor-test files have been added to the repository:
+
 - [`tests/ultrasonic-sensor/main.py`](tests/ultrasonic-sensor/main.py) sends a 10 microsecond trigger pulse and calculates distance from the ECHO pulse.
 - [`tests/ultrasonic-sensor/diagram.json`](tests/ultrasonic-sensor/diagram.json) contains the Wokwi circuit, including the ECHO voltage divider.
 - [`tests/ultrasonic-sensor/wokwi-project.txt`](tests/ultrasonic-sensor/wokwi-project.txt) links to the original Wokwi project.
 - [`tests/ultrasonic-sensor/debugging-log.md`](tests/ultrasonic-sensor/debugging-log.md) records the fault-isolation tests and final sensor diagnosis.
 
+## AI use
+
+AI was used to help speed up drafting, debugging, and documentation.
+All AI-generated suggestions were reviewed, tested, and adapted where
+necessary. The physical testing, measurements, fault diagnosis, and final
+decisions in this project were carried out by the project author.
+
 ## Next steps
 
-- Add the rotating mount and sonar-style display.
+- Design and add the rotating mount and sonar-style display.
 - Calibrate and validate distance readings at known distances.
 - Integrate the sensor test into the rotating scanner system.
